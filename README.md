@@ -1,5 +1,6 @@
 # README
-
+The author has to login when creating a post (which is the owner of the site)
+visitor can only read posts and add comments with name
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
