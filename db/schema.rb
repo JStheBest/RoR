@@ -12,7 +12,10 @@
 
 ActiveRecord::Schema.define(version: 20190614115446) do
 
-  create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
     t.string "username"
     t.text "body"
     t.bigint "post_id"
@@ -21,7 +24,7 @@ ActiveRecord::Schema.define(version: 20190614115446) do
     t.index ["post_id"], name: "index_comments_on_post_id"
   end
 
-  create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "posts", force: :cascade do |t|
     t.string "title"
     t.text "body"
     t.datetime "created_at", null: false
