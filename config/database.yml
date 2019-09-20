@@ -21,6 +21,11 @@ default: &default
 
 development:
   <<: *default
+  adapter: mysql2
+  username: root
+  password:
+  host: localhost
+  socket: C:/xampp/mysql/mysql.sock
   database: rorblog
 
 # Warning: The database defined as "test" will be erased and
@@ -51,6 +56,9 @@ test:
 #
 production:
   <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
   database: blog_production
   username: blog
   password: <%= ENV['BLOG_DATABASE_PASSWORD'] %>
